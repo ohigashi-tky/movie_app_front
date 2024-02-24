@@ -1,4 +1,3 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
 import Link from 'next/link'
 import NavLink from '@/components/NavLink'
@@ -9,6 +8,7 @@ import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { SiThemoviedatabase } from "react-icons/si";
 
 const Navigation = ({ user }) => {
     const { logout } = useAuth()
@@ -23,17 +23,31 @@ const Navigation = ({ user }) => {
                     <div className="flex">
                         {/* Logo */}
                         <div className="flex-shrink-0 flex items-center">
-                            <Link href="/dashboard">
-                                <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" />
+                            <Link href="/home">
+                                <SiThemoviedatabase size={60} />
                             </Link>
                         </div>
 
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
-                                href="/dashboard"
-                                active={usePathname() === '/dashboard'}>
-                                Dashboard
+                                href="/movie"
+                                active={usePathname() === '/movie'}>
+                                映画
+                            </NavLink>
+                        </div>
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink
+                                href="/tv"
+                                active={usePathname() === '/tv'}>
+                                TV
+                            </NavLink>
+                        </div>
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <NavLink
+                                href="/anime"
+                                active={usePathname() === '/anime'}>
+                                アニメ
                             </NavLink>
                         </div>
                     </div>
@@ -63,7 +77,7 @@ const Navigation = ({ user }) => {
                             }>
                             {/* Authentication */}
                             <DropdownButton onClick={logout}>
-                                Logout
+                                ログアウト
                             </DropdownButton>
                         </Dropdown>
                     </div>

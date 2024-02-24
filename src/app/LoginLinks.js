@@ -10,10 +10,10 @@ const LoginLinks = () => {
         <div className="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             {user ? (
                 <Link
-                    href="/dashboard"
+                    href="/home"
                     className="ml-4 text-sm text-gray-700 underline"
                 >
-                    Dashboard
+                    home
                 </Link>
             ) : (
                 <>
@@ -21,14 +21,14 @@ const LoginLinks = () => {
                         href="/login"
                         className="text-sm text-gray-700 underline"
                     >
-                        Login
+                        ログイン
                     </Link>
 
                     <Link
                         href="/register"
                         className="ml-4 text-sm text-gray-700 underline"
                     >
-                        Register
+                        新規登録
                     </Link>
                 </>
             )}
